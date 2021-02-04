@@ -1,4 +1,4 @@
-# Coronavirus Disease Analysis using Chest X-ray Images and a Novel Deep Convolutional Neural Network
+# Coronavirus Disease Analysis using Chest X-Ray Images and a Novel Deep Convolutional Neural Network
 
 The novel coronavirus (COVID-19) is quickly spreading throughout the world, but facilities in the hospitals are limited. Therefore, diagnostic tests are required to timely identify COVID-19 infected patients, and thus reduce the spread of COVID-19. The proposed method exploits the learning capability of the convolutional neural network (CNN) to classify COVID-19 infected versus healthy patients. The classification is accomplished using a new CNN architecture suitable for pneumonia-based analysis of COVID-19 chest X-ray images. The proposed COVID-19 RENet is an encoder-based CNN architecture that is well suited for feature extraction and image analysis. It is observed that the systematic dimensionality reduction through several layers combined with the synchronization of max-pooling (edge-based information extraction) and average pooling (Region-based information extraction) is well suited for image analysis. Finally, the deep features are extracted from CNN architecture and fed into the SVM classifier to improve the classification performance. The proposed technique is evaluated and compared with existing techniques using 5-fold cross-validation on the COVID-19 X-ray dataset. The proposed technique shows good performance and in most of the cases, outperforms the current techniques using metrics such as the accuracy, F-score, and ROC curve. The proposed approach (concatenated deep features of both the COVID-RENet and COV-VGGNet model) achieved the highest classification performance on COVID-19 X-ray images. Objective evaluation of proposed approach achieved an accuracy of 98.3%, AUC: 0.98, F-score: 0.98, Recall: 0.97, and Precision: 0.99, respectively.
 
@@ -39,37 +39,38 @@ Panel (A) and (B) show COVID-19 infected and healthy images, respectively.
 1. Clone this repo.
 
 ```git bash
-git install https://github.com/PRLAB21/COVID-19-Detection-System-using-Chest-X-Ray-Images.git
+git clone https://github.com/PRLAB21/Coronavirus-Disease-Analysis-using-Chest-X-Ray-Images.git
 ```
 
-2. Change directory to cloned folder.
-
-```cmd
-cd COVID-19-Detection-System-using-Chest-X-Ray-Images-master
-```
-
-3. Download model and place it in following structure.
+2. Download model and place it in following structure.
 
 ```text
-COVID-19-Detection-System-using-Chest-X-Ray-Images-master
-|__proposed-CB-STM-RENet-model
-   |__Proposed_CB_STM_RENet.mat
+Coronavirus-Disease-Analysis-using-Chest-X-Ray-Images
+|__ models
+   |__ net_RENet_VGG_Modified1.mat
+   |__ net_RENet_VGG_Modified2.mat
 ```
 
-4. Testing images are downloaded along with this repo and are present inside COVID-X-ray-test-images directory.
+3. Testing images are downloaded along with this repo and are present inside "test-dataset" directory.
 
-5. Run code below mentioned methods.
+4. Run testing code using below mentioned methods.
 
 ## Inference Code
 
 1. Open MATLAB.
-2. Set MATLAB folder location same as this repos folder.
+2. Change MATLAB Working Directory to this repository's folder from top panel.
 3. Now add each folder to MATLAB path from Current Folder panel by right clicking on each folder and selecting Add to Path > Selected Folder and Subfolders.
-4. Now you can run either test models individually or run MATLAB GUI App as described below.
+4. Run any of the two test model using following files.
 
-### Directory: classification-test-code
+-   **test_code_RENet_VGG_Modifier1.m**: Use this file for testing the model "net_RENet_VGG_Modified1".
 
--   **test_code_image.m**: Use this file for testing classification model on folder of images at once.
+-   **test_code_RENet_VGG_Modifier2.m**: Use this file for testing the model "net_RENet_VGG_Modified2".
+
+<!-- 4. Now you can run either test models individually or run MATLAB GUI App as described below. -->
+
+<!-- ### Directory: classification-test-code
+
+-   **test_code_RENet_VGG_Modifier1.m**: Use this file for testing the model "net_RENet_VGG_Modified1" on folder of images at once.
 
 ### Directory: MATLAB-GUI-app
 
@@ -79,7 +80,7 @@ COVID-19-Detection-System-using-Chest-X-Ray-Images-master
 >> gui_classification
 ```
 
-Now the GUI interface will open after some time, then it will allow use to load image, and classify it as COVID-19 or Non-COVID-19.
+Now the GUI interface will open after some time, then it will allow use to load image, and classify it as COVID-19 or Non-COVID-19. -->
 
 ## Co-Author
 
