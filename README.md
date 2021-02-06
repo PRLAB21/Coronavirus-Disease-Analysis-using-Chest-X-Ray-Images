@@ -1,10 +1,16 @@
 # Coronavirus Disease Analysis using Chest X-Ray Images and a Novel Deep Convolutional Neural Network
 
-The novel coronavirus (COVID-19) is quickly spreading throughout the world, but facilities in the hospitals are limited. Therefore, diagnostic tests are required to timely identify COVID-19 infected patients, and thus reduce the spread of COVID-19. The proposed method exploits the learning capability of the convolutional neural network (CNN) to classify COVID-19 infected versus healthy patients. The classification is accomplished using a new CNN architecture suitable for pneumonia-based analysis of COVID-19 chest X-ray images. The proposed COVID-19 RENet is an encoder-based CNN architecture that is well suited for feature extraction and image analysis. It is observed that the systematic dimensionality reduction through several layers combined with the synchronization of max-pooling (edge-based information extraction) and average pooling (Region-based information extraction) is well suited for image analysis. Finally, the deep features are extracted from CNN architecture and fed into the SVM classifier to improve the classification performance. The proposed technique is evaluated and compared with existing techniques using 5-fold cross-validation on the COVID-19 X-ray dataset. The proposed technique shows good performance and in most of the cases, outperforms the current techniques using metrics such as the accuracy, F-score, and ROC curve. The proposed approach (concatenated deep features of both the COVID-RENet and COV-VGGNet model) achieved the highest classification performance on COVID-19 X-ray images. Objective evaluation of proposed approach achieved an accuracy of 98.3%, AUC: 0.98, F-score: 0.98, Recall: 0.97, and Precision: 0.99, respectively.
+COVID-19 is a new, highly transmissible respiratory infection that has vastly affected human lives and greatly burdens the health care system. Therefore, it is indispensable to develop a fast and accurate diagnostic system for timely identification of COVID-19 infected patients and spread control. In this work, we proposed a new X-ray based COVID-19 classification framework consisting of (i) end-to-end classification module and (ii) deep concatenated feature space based ML classification module. In this regard, two new custom CNN architectures: COVID-RENet-1 and COVID-RENet-2 are developed for COVID-19 specific pneumonia analysis by systematically employing region and edge base operations along with convolution operations. The synergistic use of region and edge based operations explore the region homogeneity and textural variations, thus helps in capturing the pneumonia specific pattern. In the first module, COVID-RENets are used for end-to-end classification. In the second module, the discrimination power is enhanced by providing the features of the COVID-RENets to SVM for classification. The performance of the proposed classification framework is evaluated by comparing it against the state-of-the-art CNNs using radiologist’s authenticated chest X-Ray dataset. The proposed classification framework shows good generalization (accuracy: 98.53%, F-score: 0.98, MCC: 0.97) with considerably high sensitivity (0.99) and precision (0.98).
 
 In this repository, we provide the MATLAB GUI and Testing Code for the Coronavirus Disease Analysis using Chest X-ray Images for the research community to use our research work.
 
-## Models Architecture
+## Overview of the workflow for the proposed COVID-19 Classification Framework
+
+In this work, a new classification framework is developed based on deep learning and classical ML techniques for automatic discrimination of COVID-19 infected patients from healthy individuals based on chest X-ray images. The proposed classification framework is constituted of two modules: (i) Proposed COVID-RENet based end-to-end Classification, and (ii) Deep Concatenated Feature-space based ML classification. In the experimental setup, initially, training samples were augmented to improve the generalization. These augmented samples were used to train the two proposed modules. The overall classification setup of the proposed COVID-19 is shown in Fig. 1.
+
+![Overview of the workflow for the proposed COVID-19 detection system](./repo-images/workflow-01.png "Overview of the workflow for the proposed COVID-19 detection system")
+
+## Models Architectures
 
 ### Architectural details of the proposed COVID-RENet-1
 
@@ -22,11 +28,35 @@ In this repository, we provide the MATLAB GUI and Testing Code for the Coronavir
 
 ## Dataset
 
+We built a new dataset consisting of X-ray images of COVID-19 pneumonia and healthy individuals in this work. X-ray images were collected from Open Source GitHub repository and Kaggle repository called “pneumonia”
+
+**Dataset will be available on request, contact at <hengrshkhan822@gmail.com>**
+
 ### Dataset Samples
 
 Panel (A) and (B) show COVID-19 infected and healthy images, respectively.
 
 ![Dataset Samples](./repo-images/dataset-01.png "Dataset Samples")
+
+## Training plot of Proposed COVID-RENet
+
+### Training Plot of the Proposed COVID-RENet-1
+
+![Training plot of Proposed COVID-RENet-1](./repo-images/training-plot-01.png "Training plot of Proposed COVID-RENet-1")
+
+### Training Plot of the Proposed COVID-RENet-2
+
+![Training plot of Proposed COVID-RENet-2](./repo-images/training-plot-02.png "Training plot of Proposed COVID-RENet-2")
+
+## Results
+
+Performance metrics for the state-of-the-art CNN models that are trained from scratch and TL-based fine-tuned pre-trained on the augmented dataset.
+
+![Results-01](./repo-images/results-01.png "Results-01")
+
+Performance metrics for the deep feature extraction from custom layers of state-of-the-art training from scratch and TL-based fine-tuned pre-trained CNN on the augmented dataset.
+
+![Results-02](./repo-images/results-02.png "Results-02")
 
 ## Requirements
 
